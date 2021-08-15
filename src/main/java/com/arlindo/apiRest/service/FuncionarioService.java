@@ -18,15 +18,15 @@ public class FuncionarioService implements Metodos {
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 
-	public Funcionario salvar(Funcionario funcrionario) {
-		return funcionarioRepository.save(funcrionario);
+	public Funcionario salvar(Funcionario funcionario) {
+		return funcionarioRepository.save(funcionario);
 
 	}
 
 	@Override
 	public Funcionario atualizar(Funcionario funcionario) {
 		Optional<Funcionario> funcionarioDB = this.funcionarioRepository.findById(funcionario.getId());
-		if(funcionarioDB.isPresent()) {
+		if (funcionarioDB.isPresent()) {
 			Funcionario func = funcionarioDB.get();
 			func.setId(funcionario.getId());
 			func.setNome(funcionario.getNome());
@@ -34,10 +34,10 @@ public class FuncionarioService implements Metodos {
 			func.setIdade(funcionario.getIdade());
 			return func;
 		} else {
-			System.out.println("ERRO AO ATUALIZAR"+funcionario.getId());
+			System.out.println("ERRO AO ATUALIZAR" + funcionario.getId());
 		}
 		return funcionario;
-		
+
 	}
 
 	@Override
@@ -49,12 +49,12 @@ public class FuncionarioService implements Metodos {
 	public Funcionario getId(long id) {
 		Optional<Funcionario> funcionarioDB = this.funcionarioRepository.findById(id);
 		if (funcionarioDB.isPresent()) {
-			return funcionarioDB.get();
+			System.out.println("SUCESS");
 		} else {
 			System.out.println("ERRO AO BUSCAR O ID" + id);
 		}
+		return funcionarioDB.get();
 
-		return null;
 	}
 
 	@Override
@@ -66,4 +66,31 @@ public class FuncionarioService implements Metodos {
 			System.out.println("ERRO AO DELETAR O ID");
 		}
 	}
+
+	@Override
+	public Funcionario pegaNome(String nome) {
+		Funcionario funcionarioGetNome = this.funcionarioRepository.findByNome(nome);
+		if (funcionarioGetNome != null) {
+			return funcionarioGetNome;
+		} else {
+			System.out.println("ERRO AO BUSCAR PELO NOME");
+		}
+		return funcionarioGetNome;
+	}
+
+	public Funcionario getSetor(String setor) {
+		Funcionario funcionarioSetor = this.funcionarioRepository.findBySetor(setor);
+		if (funcionarioSetor != null) {
+			return funcionarioSetor;
+		} else {
+			System.out.println("erro na busca por setor");
+		}
+		return funcionarioSetor;
+	}
+	//DTO
+	
+	public List<Funcionario> findAlll() {	
+		return funcionarioRepository.findAll();
+	}
+
 }

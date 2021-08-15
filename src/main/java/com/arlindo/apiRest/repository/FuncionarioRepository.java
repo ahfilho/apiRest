@@ -8,4 +8,8 @@ import com.arlindo.apiRest.model.Funcionario;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long>{
 
+
+	public Funcionario findByNome(String nome);
+	public Funcionario findBySetor(String setor);
+
 }

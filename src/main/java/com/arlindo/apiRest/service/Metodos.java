@@ -11,6 +11,7 @@ public interface Metodos {
 	List<Funcionario> listar();
 	Funcionario getId(long id);
 	void deletaFuncionario(long id);
-
-
+	Funcionario pegaNome(String nome);
+	Funcionario getSetor(String setor);
+	
 }

@@ -9,9 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.estudo</groupId>
-	<artifactId>Arlindo-ApiRest</artifactId>
+	
+	<artifactId>API PADRÃO DTO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Arlindo-ApiRest</name>
+	<name>IMPLEMENTANDO PADRÃO DTO</name>
 	<description>continuando o estudo de API REST</description>
 	<properties>
 		<java.version>11</java.version>
