@@ -21,11 +21,12 @@ public class FuncionarioDTO implements Serializable {
 	private String nome;
 	private String funcao;
 	private String setor;
-
+	private int matricula;
 
 	public Funcionario transformaDTO() {
+		System.out.println("TRANSFORMA DTO");
 			// passo apenas os atributos que forem necessários. Por exemplo, não passei a idade, pois nao é importante.
-		return new Funcionario(nome,funcao,setor);
+		return new Funcionario(nome,funcao,setor,matricula);
 		
 	}
 	

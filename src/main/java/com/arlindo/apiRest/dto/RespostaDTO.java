@@ -13,9 +13,11 @@ public class RespostaDTO {
 	private String nome;
 	private String funcao;
 	private String setor;
-
+	private int matricula;
+	
 	public static RespostaDTO transformaDTO(Funcionario funcionario) {
-		return new RespostaDTO(funcionario.getId(), funcionario.getNome(), funcionario.getFuncao(),funcionario.getSetor());
+		return new RespostaDTO(funcionario.getId(), funcionario.getNome(), funcionario.getFuncao(),funcionario.getSetor(), funcionario.getMatricula());
+	
 	}
 
 

@@ -13,5 +13,5 @@ public interface Metodos {
 	void deletaFuncionario(long id);
 	Funcionario pegaNome(String nome);
 	Funcionario getSetor(String setor);
-	
+	Funcionario getMatricula(int matricula);
 }

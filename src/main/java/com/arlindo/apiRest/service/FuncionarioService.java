@@ -31,7 +31,6 @@ public class FuncionarioService implements Metodos {
 			func.setId(funcionario.getId());
 			func.setNome(funcionario.getNome());
 			func.setFuncao(funcionario.getFuncao());
-			func.setIdade(funcionario.getIdade());
 			return func;
 		} else {
 			System.out.println("ERRO AO ATUALIZAR" + funcionario.getId());
@@ -87,10 +86,21 @@ public class FuncionarioService implements Metodos {
 		}
 		return funcionarioSetor;
 	}
-	//DTO
-	
-	public List<Funcionario> findAlll() {	
+	// DTO
+
+	public List<Funcionario> findAlll() {
 		return funcionarioRepository.findAll();
+	}
+
+	@Override
+	public Funcionario getMatricula(int matricula) {
+		Funcionario funcionarioMatricula = this.funcionarioRepository.findByMatricula(matricula);
+		if (funcionarioMatricula != null) {
+			System.out.println("matricula encontrada");
+		} else {
+		System.out.println("Esta matrícula não existe");	
+		}
+		return funcionarioMatricula;
 	}
 
 }
