@@ -31,6 +31,8 @@ public class FuncionarioService implements Metodos {
 			func.setId(funcionario.getId());
 			func.setNome(funcionario.getNome());
 			func.setFuncao(funcionario.getFuncao());
+			func.setSetor(funcionario.getSetor());
+			func.setMatricula(funcionario.getMatricula());
 			return func;
 		} else {
 			System.out.println("ERRO AO ATUALIZAR" + funcionario.getId());
@@ -98,7 +100,7 @@ public class FuncionarioService implements Metodos {
 		if (funcionarioMatricula != null) {
 			System.out.println("matricula encontrada");
 		} else {
-		System.out.println("Esta matrícula não existe");	
+			System.out.println("Esta matrícula não existe");
 		}
 		return funcionarioMatricula;
 	}

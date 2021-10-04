@@ -13,6 +13,7 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> 
 	public Funcionario findBySetor(String setor);
 
 	public Funcionario findByMatricula(int matricula);
+
 }
 
 /*

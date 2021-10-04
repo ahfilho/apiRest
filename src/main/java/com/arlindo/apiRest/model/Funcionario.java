@@ -16,12 +16,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Data
 @Setter
 @Getter
 @NoArgsConstructor
 //@AllArgsConstructor
+@Data
 public class Funcionario {
+
+
 
 	@Id
 	@Column
@@ -32,15 +34,15 @@ public class Funcionario {
 	@Column(name = "nome")
 	private String nome;
 
-	@NotEmpty(message = "não pode ser nulo")
+	@NotEmpty(message = "não pode ser vazio")
 	@Column
 	private String funcao;
 
-	@NotEmpty(message = "não pode ser nulo")
+	@NotEmpty(message = "não pode ser vazio")
 	@Column
 	private String setor;
 
-	@Column (name="matricula")
+	@Column(name = "matricula")
 	private int matricula;
 
 	//// DTO 3º

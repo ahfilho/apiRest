@@ -32,7 +32,6 @@ public class Controller {
 	@GetMapping("/listar")
 	public ResponseEntity<List<Funcionario>> getId() {
 		System.out.println(fs.listar());
-
 		return ResponseEntity.ok().body(fs.listar());
 	}
 
@@ -41,8 +40,9 @@ public class Controller {
 		return ResponseEntity.ok().body(fs.getId(id));
 
 	}
+
 	@GetMapping("/get/{matricula}")
-	public ResponseEntity<Funcionario> getMatricula(@PathVariable int matricula){
+	public ResponseEntity<Funcionario> getMatricula(@PathVariable int matricula) {
 		return ResponseEntity.ok().body(fs.getMatricula(matricula));
 	}
 
@@ -55,8 +55,7 @@ public class Controller {
 		/*
 		 * retorna um ResponseEntity do tipo funcionario
 		 * 
-		 * return ResponseEntity.ok().body(fs.salvar(funcionario)); 
-		 * passando um status
+		 * return ResponseEntity.ok().body(fs.salvar(funcionario)); passando um status
 		 * CREATED, QUE COMPÕE A RESPOSA HTTP ( ResponseEntity destina-se a representar
 		 * toda a resposta HTTP. Você pode controlar tudo o que entra nele: código de
 		 * status, cabeçalhos e corpo.
@@ -95,4 +94,18 @@ public class Controller {
 		return ResponseEntity.ok().body(listDTO);
 
 	}
+
+	@DeleteMapping("/deleta/{id}")
+	public HttpStatus delatar(@PathVariable long id) throws Exception {
+		this.fs.deletaFuncionario(id);
+		return HttpStatus.OK;
+	}
+
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Funcionario> atualizar(@PathVariable long id, @RequestBody Funcionario funcionario)
+			throws Exception {
+		funcionario.setId(id);
+		return ResponseEntity.ok().body(this.fs.atualizar(funcionario));
+	}
+
 }
