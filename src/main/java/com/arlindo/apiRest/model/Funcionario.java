@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 @Data
 public class Funcionario {
 
